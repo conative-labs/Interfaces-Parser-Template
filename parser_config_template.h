@@ -29,7 +29,7 @@ static struct {
 /*REQUIRED MACROS END*/
 
 /*OPTIONAL MACROS*/
-#define configEXTRA_COMMANDS() {\
+#define configEXTRA_COMMANDS(cmd,buffer) {\
 	return false;\
 }
 /*OPTIONAL MACROS END*/

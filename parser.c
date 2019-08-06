@@ -6,7 +6,7 @@
 #include "parser_config.h"
 
 #ifndef configEXTRA_COMMANDS
-#define configEXTRA_COMMANDS() return 0
+#define configEXTRA_COMMANDS(cmd,buffer) return 0
 #endif
 
 #define PRETEXTIFY(A) #A
@@ -46,6 +46,6 @@ bool bParserCmd(char *cmd, char *buffer) {
 		prvParamsSetDefault();
 		configUPDATE_PARAMS();
 	} else
-		configEXTRA_COMMANDS();
+		configEXTRA_COMMANDS(cmd,buffer);
 	return 1;
 }
