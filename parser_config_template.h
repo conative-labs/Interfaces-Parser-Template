@@ -7,7 +7,9 @@
 #define configMAGIC_NUMBER_DEFAULT 0xFF
 #define configNAME_LEN 5
 #define configDEP_STRING ""
+#define configDEP_UNIT_STRING ""
 #define configPARAM_STRING ""
+#define configPARAM_UNIT_STRING ""
 /*REQUIRED DEFINITIONS END*/
 
 /*INTERNAL DATA STRUCTURE*/

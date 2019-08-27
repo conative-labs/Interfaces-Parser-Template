@@ -5,7 +5,6 @@
 #define PARSER_TYPE_ACTUATOR "A"
 
 #define PARSER_SEPARATOR ","
-#define PARSER_SEPARATOR_UNIT ":"
 
 #define PARSER_CODE_TEMP "t"
 #define PARSER_CODE_pH "p"

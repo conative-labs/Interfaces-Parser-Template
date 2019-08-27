@@ -31,10 +31,18 @@ bool bParserCmd(char *cmd, char *buffer) {
 		sprintf(buffer, configEXECUTE_READ_PRINTF_STRING);
 	} else if('i' == cmd[0] && 0 == cmd[1]) {
 		sprintf(buffer, PARSER_TYPE","configVERSION);
-	} else if(!strncmp("param", cmd, 6)) {
-		sprintf(buffer, configPARAM_STRING);
-	} else if(!strncmp("dep", cmd, 4)) {
-		sprintf(buffer, configDEP_STRING);
+	} else if(!strncmp("param", cmd, 5)) {
+		if(cmd[5] == 0) {
+			sprintf(buffer, configPARAM_STRING);
+		} else if(!strncmp(",unit", cmd + 5, 6)) {
+			sprintf(buffer, configPARAM_UNIT_STRING);
+		}
+	} else if(!strncmp("dep", cmd, 3)) {
+		if(cmd[3] == 0) {
+			sprintf(buffer, configDEP_STRING);
+		} else if(!strncmp(",unit", cmd + 3, 6)) {
+			sprintf(buffer, configDEP_UNIT_STRING);
+		}
 	} else if(!strncmp("name,", cmd, 5)) {
 		if('?' == cmd[5]) {
 			sprintf(buffer, "%s", xParams.cName);
