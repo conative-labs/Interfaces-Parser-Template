@@ -6,6 +6,15 @@
 
 #define PARSER_SEPARATOR ","
 
+#define PARSER_NAME_TEMP "Temperature"
+#define PARSER_NAME_pH "pH"
+#define PARSER_NAME_EC "E.Conductivity"
+#define PARSER_NAME_SALINITY "Salinity"
+#define PARSER_NAME_TDS "TDS"
+#define PARSER_NAME_DO "Dissolved Oxygen"
+#define PARSER_NAME_DO_SAT "Sat.Percent"
+#define PARSER_NAME_PRESSURE "Pressure"
+
 #define PARSER_CODE_TEMP "t"
 #define PARSER_CODE_pH "p"
 #define PARSER_CODE_EC "E"

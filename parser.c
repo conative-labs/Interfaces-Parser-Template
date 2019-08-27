@@ -36,13 +36,17 @@ bool bParserCmd(char *cmd, char *buffer) {
 			sprintf(buffer, configPARAM_STRING);
 		} else if(!strncmp(",unit", cmd + 5, 6)) {
 			sprintf(buffer, configPARAM_UNIT_STRING);
-		}
+		} else if(!strncmp(",name", cmd + 5, 6)) {
+			sprintf(buffer, configPARAM_NAME_STRING);
+		} else
+			return 0;
 	} else if(!strncmp("dep", cmd, 3)) {
 		if(cmd[3] == 0) {
 			sprintf(buffer, configDEP_STRING);
 		} else if(!strncmp(",unit", cmd + 3, 6)) {
 			sprintf(buffer, configDEP_UNIT_STRING);
-		}
+		} else
+			return 0;
 	} else if(!strncmp("name,", cmd, 5)) {
 		if('?' == cmd[5]) {
 			sprintf(buffer, "%s", xParams.cName);

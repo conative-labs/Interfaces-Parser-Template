@@ -10,6 +10,7 @@
 #define configDEP_UNIT_STRING ""
 #define configPARAM_STRING ""
 #define configPARAM_UNIT_STRING ""
+#define configPARAM_NAME_STRING ""
 /*REQUIRED DEFINITIONS END*/
 
 /*INTERNAL DATA STRUCTURE*/
