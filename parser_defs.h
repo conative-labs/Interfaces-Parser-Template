@@ -14,6 +14,9 @@
 #define PARSER_NAME_DO "Dissolved Oxygen"
 #define PARSER_NAME_DO_SAT "Sat.Percent"
 #define PARSER_NAME_PRESSURE "Pressure"
+#define PARSER_NAME_CUR "Current"
+#define PARSER_NAME_ORP "ORP"
+#define PARSER_NAME_FLO "Water Flow"
 
 #define PARSER_CODE_TEMP "t"
 #define PARSER_CODE_pH "p"
