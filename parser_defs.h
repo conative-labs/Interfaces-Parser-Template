@@ -23,6 +23,9 @@
 #define PARSER_CODE_DO "D"
 #define PARSER_CODE_DO_SAT "s"
 #define PARSER_CODE_PRESSURE "P"
+#define PARSER_CODE_CUR "c"
+#define PARSER_CODE_ORP "o"
+#define PARSER_CODE_FLO "f"
 
 #define PARSER_UNIT_TEMP "C"
 #define PARSER_UNIT_DO "mg/L"
@@ -31,5 +34,8 @@
 #define PARSER_UNIT_EC "uS"
 #define PARSER_UNIT_SALINITY "ppt"
 #define PARSER_UNIT_TDS "mg/L"
+#define PARSER_UNIT_CUR "Amp"
+#define PARSER_UNIT_ORP "mv"
+#define PARSER_UNIT_FLO "L/min"
 
 #endif
