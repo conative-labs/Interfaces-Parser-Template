@@ -29,6 +29,11 @@ static struct {
 #define configINIT_EXTRA() do {; } while (0)
 #define configEXECUTE_READ()
 #define configEXECUTE_READ_PRINTF_STRING ""
+#define configCONTROL_CHECK(values)
+#define configCONTROL_SET_LOW(value)
+#define configCONTROL_SET_HIGH(value)
+#define configCONTROL_GET_LOW(buffer)
+#define configCONTROL_GET_HIGH(buffer)
 /*REQUIRED MACROS END*/
 
 /*OPTIONAL MACROS*/
