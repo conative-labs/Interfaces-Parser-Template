@@ -33,6 +33,7 @@ bool bParserCmd(char *cmd, char *buffer)
     if ('r' == cmd[0] && 0 == cmd[1]) {
         configEXECUTE_READ();
         sprintf(buffer, configEXECUTE_READ_PRINTF_STRING);
+        configCONTROL_CHECK(buffer);
     } else if ('i' == cmd[0] && 0 == cmd[1]) {
         sprintf(buffer, PARSER_TYPE ","configVERSION);
     } else if (!strncmp("param", cmd, 5)) {
@@ -62,6 +63,19 @@ bool bParserCmd(char *cmd, char *buffer)
     } else if (!strncmp("factory", cmd, 8)) {
         prvParamsSetDefault();
         configUPDATE_PARAMS();
+    } else if (!strncmp("c,", cmd, 2)) {      /* ex: c,l,123.4 */
+        if (!strncmp("l,", cmd + 2, 2)) {
+            if (cmd[4] == '?')
+                configCONTROL_GET_LOW(buffer);
+            else
+                configCONTROL_SET_LOW(cmd + 4);
+
+        } else if (!strncmp("h,", cmd + 2, 2)) {
+            if (cmd[4] == '?')
+                configCONTROL_GET_HIGH(buffer);
+            else
+                configCONTROL_SET_HIGH(cmd + 4);
+        }
     } else {
         configEXTRA_COMMANDS(cmd, buffer);
     }
