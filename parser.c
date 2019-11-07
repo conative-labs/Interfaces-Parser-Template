@@ -5,8 +5,10 @@
 #include "parser_defs.h"
 #include "parser_config.h"
 
+#ifndef TEST
  #ifndef configEXTRA_COMMANDS
   #define configEXTRA_COMMANDS(cmd, buffer) return 0
+ #endif
 #endif
 
 #define PRETEXTIFY(A) #A
