@@ -3,7 +3,11 @@
 
 #include "parser.h"
 #include "parser_defs.h"
+#ifdef TEST
+#include "parser_config_test.h"
+#else
 #include "parser_config.h"
+#endif
 
 #ifndef TEST
  #ifndef configEXTRA_COMMANDS

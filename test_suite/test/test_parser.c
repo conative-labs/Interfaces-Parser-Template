@@ -1,7 +1,7 @@
 #include "unity.h"
 #include "parser.h"
 
-#include "mock_parser_config.h"
+#include "mock_parser_config_test.h"
 
 void setUP(void)
 {
