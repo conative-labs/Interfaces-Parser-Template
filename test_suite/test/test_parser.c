@@ -50,6 +50,7 @@ void test_bParserCmd_ReadCmd(void)
 {
   bool ret;
   configEXECUTE_READ_Expect();
+  configCONTROL_CHECK_Expect(buf);
   
   ret = bParserCmd("r", buf);
 
@@ -167,4 +168,44 @@ void test_bParserCmd_ExtraCmd(void)
     ret = bParserCmd("cal,?", buf); // not a standard command
     TEST_ASSERT_EQUAL(true, ret);
     
+}
+
+void test_bParserCmd_ControlGetLowCmd(void)
+{
+    bool ret;
+
+    configCONTROL_GET_LOW_Expect(buf);
+    
+    ret = bParserCmd("c,l,?", buf);
+    TEST_ASSERT_EQUAL(true, ret);
+}
+
+void test_bParserCmd_ControlGetHighCmd(void)
+{
+    bool ret;
+
+    configCONTROL_GET_HIGH_Expect(buf);
+    
+    ret = bParserCmd("c,h,?", buf);
+    TEST_ASSERT_EQUAL(true, ret);
+}
+
+void test_bParserCmd_ControlSetLowCmd(void)
+{
+    bool ret;
+
+    configCONTROL_SET_LOW_Expect("123");
+    
+    ret = bParserCmd("c,l,123", buf);
+    TEST_ASSERT_EQUAL(true, ret);
+}
+
+void test_bParserCmd_ControlSeHighCmd(void)
+{
+    bool ret;
+
+    configCONTROL_SET_HIGH_Expect("123");
+    
+    ret = bParserCmd("c,h,123", buf);
+    TEST_ASSERT_EQUAL(true, ret);
 }
