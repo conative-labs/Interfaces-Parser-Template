@@ -40,7 +40,7 @@ bool bParserCmd(char *cmd, char *buffer)
         configEXECUTE_READ();
         sprintf(buffer, configEXECUTE_READ_PRINTF_STRING);
         configCONTROL_CHECK(buffer);
-    } else if ('i' == cmd[0] && 0 == cmd[1]) {
+    } else if (('i' == cmd[0]||'I' == cmd[0]) && 0 == cmd[1]) {
         sprintf(buffer, PARSER_TYPE ","configVERSION);
     } else if (!strncmp("param", cmd, 5)) {
         if (cmd[5] == 0)
